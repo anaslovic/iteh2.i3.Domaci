@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); */
+
+Route::get('models','Api\ModelsController@index');
+Route::get('agents','Api\AgentsController@index');
+Route::get('agentsById/{id}','Api\AgentsController@show');
+
+Route::post('addition/store','Api\ModelsController@store');
+
+Route::delete('allModels/delete/{id}','Api\ModelsController@destroy');
+Route::delete('allAgents/delete/{id}','Api\AgentsController@destroy');
