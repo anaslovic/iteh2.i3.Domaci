@@ -39,7 +39,7 @@ export default class Agents extends Component {
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Ime i prezime</th>
-                        <th scope="col">Agencija</th>
+                        <th scope="col">Ogranak</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -51,7 +51,7 @@ export default class Agents extends Component {
                                     <td>{agents.id}</td>
                                     <td>{agents.ime_Prezime}</td>
                                     <td>{agents.naziv_agencije}</td>
-                                    <td><a href="#" className="btn btn-success text-warning" onClick={this.onDelete.bind(this,agents.id)}>Delete</a></td>
+                                    <td><a href="#" className="btn btn-danger text-warning" onClick={this.onDelete.bind(this,agents.id)}>Delete</a></td>
                                 </tr>
                             )
                         })

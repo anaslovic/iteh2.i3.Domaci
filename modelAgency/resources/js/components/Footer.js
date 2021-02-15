@@ -6,7 +6,7 @@ import './App.css';
 export default class Footer extends Component {
     render(){
         return (
-            <div className="container bg-warning">
+            <div className="container pt-3 pb-2 bg-dark text-light">
                     
                         
                         
@@ -15,7 +15,7 @@ export default class Footer extends Component {
                         
                         
                     
-                </div>
+            </div>
              
         );
     }

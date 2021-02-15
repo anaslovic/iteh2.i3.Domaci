@@ -12,7 +12,7 @@ export default class Header extends Component {
         return (
             <Router>
                 <div>
-                    <nav className="navbar navbar-expand-lg navbar-dark bg-warning">
+                    <nav className="navbar pt-4 navbar-expand-lg navbar-light bg-dark text-light">
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -20,17 +20,17 @@ export default class Header extends Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav mr-auto">
                                 <li className="nav-item active">
-                                    <Link className="nav-link text-success" to="/">Home</Link>
+                                    <Link className="nav-link text-light" to="/">HOME</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link text-dark" to="/allAgents">AGENTS</Link>
+                                    <Link className="nav-link text-light" to="/allAgents">AGENTS</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link text-dark" to="/allModels">MODELS</Link> &nbsp;
+                                    <Link className="nav-link text-light" to="/allModels">MODELS</Link> &nbsp;
                                 </li >
                                 
                                 <li className="nav-item">
-                                    <Link className="nav-link text-dark" to="/addition">ADD MODELS</Link>
+                                    <Link className="nav-link text-light" to="/addition">ADD MODELS</Link>
                                 </li>
                             </ul>
                         </div>

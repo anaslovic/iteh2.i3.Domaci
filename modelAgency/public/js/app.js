@@ -2068,7 +2068,7 @@ var Add = /*#__PURE__*/function (_Component) {
     _this.onChangeGodiste = _this.onChangeGodiste.bind(_assertThisInitialized(_this));
     _this.onSubmit = _this.onSubmit.bind(_assertThisInitialized(_this));
     _this.state = {
-      model: ' ',
+      imePrezime: ' ',
       agent_id: ' ',
       cenaIznajmljivanja: ' ',
       godiste: ' '
@@ -2080,7 +2080,7 @@ var Add = /*#__PURE__*/function (_Component) {
     key: "onChangeModels",
     value: function onChangeModels(e) {
       this.setState({
-        model: e.target.value
+        imePrezime: e.target.value
       });
     }
   }, {
@@ -2121,6 +2121,18 @@ var Add = /*#__PURE__*/function (_Component) {
           console.log(resp);
         });
       });
+
+      if (submitted) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Redirect, {
+          push: true,
+          to: {
+            pathname: '/allModels',
+            state: {
+              data: data.toString()
+            }
+          }
+        });
+      }
     }
   }, {
     key: "render",
@@ -2135,7 +2147,7 @@ var Add = /*#__PURE__*/function (_Component) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
               className: "form-control",
               type: "text",
-              id: "model",
+              id: "imePrezime",
               onChange: this.onChangeModels,
               placeholder: "Puno ime i prezime"
             })]
@@ -2169,10 +2181,13 @@ var Add = /*#__PURE__*/function (_Component) {
               id: "agent_id",
               onChange: this.onChangeID
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-            type: "submit",
-            className: "btn btn-primary",
-            children: "Submit"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "form-group",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              type: "submit",
+              className: "btn btn-dark",
+              children: "Submit"
+            })
           })]
         })
       });
@@ -2293,7 +2308,7 @@ var Agents = /*#__PURE__*/function (_Component) {
                 children: "Ime i prezime"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
                 scope: "col",
-                children: "Agencija"
+                children: "Ogranak"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
                 scope: "col",
                 children: "Action"
@@ -2311,7 +2326,7 @@ var Agents = /*#__PURE__*/function (_Component) {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
                     href: "#",
-                    className: "btn btn-success text-warning",
+                    className: "btn btn-danger text-warning",
                     onClick: _this4.onDelete.bind(_this4, agents.id),
                     children: "Delete"
                   })
@@ -2389,7 +2404,7 @@ var Footer = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "container bg-warning",
+        className: "container pt-3 pb-2 bg-dark text-light",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
           children: "2021 \xA9 ANASLO | Design by Ana Slovic "
         })
@@ -2474,7 +2489,7 @@ var Header = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("nav", {
-            className: "navbar navbar-expand-lg navbar-dark bg-warning",
+            className: "navbar pt-4 navbar-expand-lg navbar-light bg-dark text-light",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
               className: "navbar-toggler",
               type: "button",
@@ -2494,28 +2509,28 @@ var Header = /*#__PURE__*/function (_Component) {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                   className: "nav-item active",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-                    className: "nav-link text-success",
+                    className: "nav-link text-light",
                     to: "/",
-                    children: "Home"
+                    children: "HOME"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                   className: "nav-item",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-                    className: "nav-link text-dark",
+                    className: "nav-link text-light",
                     to: "/allAgents",
                     children: "AGENTS"
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
                   className: "nav-item",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-                    className: "nav-link text-dark",
+                    className: "nav-link text-light",
                     to: "/allModels",
                     children: "MODELS"
                   }), " \xA0"]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                   className: "nav-item",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-                    className: "nav-link text-dark",
+                    className: "nav-link text-light",
                     to: "/addition",
                     children: "ADD MODELS"
                   })
@@ -2608,12 +2623,13 @@ var Home = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "text-centre",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
           children: "AS Model Agency"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
           children: "Najtra\u017Eeniji modeli u zemlji!"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          children: "AS Model Agency je osnovana 2010. godine i od tada uspe\u0161no radi sa velikim brojem doma\u0107ih i inostranih modela, kako mu\u0161kih tako i \u017Eenskih."
+          children: "AS Model Agency je osnovana 2010. godine i od tada uspe\u0161no radi sa velikim brojem doma\u0107ih i inostranih modela, kako mu\u0161kih tako i \u017Eenskih. Agencija je do sada imala priliku da sara\u0111uje sa \u010Dak 70 razli\u010Ditih modnih brendova, od kojih su najzna\u010Dajniji Gucci, Prada, Dolce Gabbana i tako dalje. Na\u0161u ponudu odlikuje velika razli\u010Ditost i jedinstvenost li\u010Dnih crta koje \u0107e va\u0161e proizvode istaknuti i u\u010Diniti daleko po\u017Eeljnijim."
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {})]
       });
     }
@@ -2816,7 +2832,7 @@ var Models = /*#__PURE__*/function (_Component) {
                 children: "Cena iznajmljivanja"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
                 scope: "col",
-                children: "Godiste"
+                children: "Godi\u0161te"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
                 scope: "col",
                 children: "Agent"

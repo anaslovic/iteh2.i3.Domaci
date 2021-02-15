@@ -17,7 +17,7 @@ export default class Add extends Component {
         this.onSubmit=this.onSubmit.bind(this);
         
         this.state={
-            model:' ',
+            imePrezime:' ',
             agent_id:' ',
             cenaIznajmljivanja:' ',
             godiste:' '
@@ -26,7 +26,7 @@ export default class Add extends Component {
 
     onChangeModels(e){
         this.setState({
-            model:e.target.value
+            imePrezime:e.target.value
         });
     }
 
@@ -65,6 +65,13 @@ export default class Add extends Component {
                 console.log(resp)
             })
         })
+        if (submitted) {
+            return <Redirect push to={{
+              pathname: '/allModels',
+              state: {data: data.toString()}
+            }}
+            />
+        }
     }
 
 
@@ -75,7 +82,7 @@ export default class Add extends Component {
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Ime i prezime modela:</label>
-                        <input className="form-control" type="text" id="model" onChange={this.onChangeModels} placeholder="Puno ime i prezime"></input>
+                        <input className="form-control" type="text" id="imePrezime" onChange={this.onChangeModels} placeholder="Puno ime i prezime"></input>
                     </div>
                     <div className="form-group">
                         <label>Cena iznajmljivanja</label>
@@ -89,8 +96,9 @@ export default class Add extends Component {
                         <label>ID agents</label>
                         <input className="form-control form-control-sm" type="text" id="agent_id" onChange={this.onChangeID} ></input>
                     </div>
-                    
-                    <button type="submit" className="btn btn-primary" >Submit</button>
+                    <div className="form-group">
+                        <button type="submit" className="btn btn-dark" >Submit</button>
+                    </div>
                     </form>  
             </div>
         );

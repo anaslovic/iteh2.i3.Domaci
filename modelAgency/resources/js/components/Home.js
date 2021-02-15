@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 export default class Home extends Component {
     render(){
         return (
-            <div>
+            <div className="text-centre">
                 <br></br>
                 <h1>AS Model Agency</h1>
                 <h3>Najtraženiji modeli u zemlji!</h3>

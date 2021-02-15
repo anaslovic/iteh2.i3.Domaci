@@ -33,10 +33,10 @@ class ModelsController extends Controller
         $id=$request->agent_id;
         $a = Agents::find($id);
         if($a!=null && $request->cenaIznajmljivanja!=null && $request->agent_id!=null && $request->cenaIznajmljivanja>0
-            && $request->godiste!=null && $request->models!=null){
+            && $request->godiste!=null && $request->imePrezime!=null){
           
                 $m = new Models();
-                $m->imePrezime=$request->models;
+                $m->imePrezime=$request->imePrezime;
                 $m->agent_id=$request->agent_id;
                 $m->cenaIznajmljivanja=$request->cenaIznajmljivanja;
                 $m->godiste=$request->godiste;
