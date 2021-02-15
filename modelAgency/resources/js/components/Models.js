@@ -56,7 +56,7 @@ export default class Models extends Component {
                                     <td>{models.cenaIznajmljivanja}</td>
                                     <td>{models.godiste}</td>
                                     <td>{models.agent_id}</td>
-                                    <td><a href="#" className="btn btn-danger" onClick={this.onDelete.bind(this,models.id)}>Delete</a></td>
+                                    <td><a href="#" className="btn btn-secondary" onClick={this.onDelete.bind(this,models.id)}>Delete</a></td>
                                 </tr>
                             )
                         })

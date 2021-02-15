@@ -51,7 +51,7 @@ export default class Agents extends Component {
                                     <td>{agents.id}</td>
                                     <td>{agents.ime_Prezime}</td>
                                     <td>{agents.naziv_agencije}</td>
-                                    <td><a href="#" className="btn btn-danger text-warning" onClick={this.onDelete.bind(this,agents.id)}>Delete</a></td>
+                                    <td><a href="#" className="btn btn-secondary text-warning" onClick={this.onDelete.bind(this,agents.id)}>Delete</a></td>
                                 </tr>
                             )
                         })

@@ -2326,7 +2326,7 @@ var Agents = /*#__PURE__*/function (_Component) {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
                     href: "#",
-                    className: "btn btn-danger text-warning",
+                    className: "btn btn-secondary text-warning",
                     onClick: _this4.onDelete.bind(_this4, agents.id),
                     children: "Delete"
                   })
@@ -2857,7 +2857,7 @@ var Models = /*#__PURE__*/function (_Component) {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
                     href: "#",
-                    className: "btn btn-danger",
+                    className: "btn btn-secondary",
                     onClick: _this4.onDelete.bind(_this4, models.id),
                     children: "Delete"
                   })
