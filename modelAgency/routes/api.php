@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ModelsController;
+use App\Http\Controllers\Api\AgentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +20,11 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 }); */
 
-Route::get('models','Api\ModelsController@index');
-Route::get('agents','Api\AgentsController@index');
-Route::get('agentsById/{id}','Api\AgentsController@show');
+Route::get('models',[ModelsController::class, 'index']);
+Route::get('agents',[AgentsController::class, 'index']);
+Route::get('agentsById/{id}',[AgentsController::class, 'show']);
 
-Route::post('addition/store','Api\ModelsController@store');
+Route::post('addition/store',[ModelsController::class, 'store']);
 
-Route::delete('allModels/delete/{id}','Api\ModelsController@destroy');
-Route::delete('allAgents/delete/{id}','Api\AgentsController@destroy');
+Route::delete('allModels/delete/{id}',[ModelsController::class, 'destroy']);
+Route::delete('allAgents/delete/{id}',[AgentsController::class, 'destroy']);
